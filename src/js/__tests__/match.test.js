@@ -61,3 +61,18 @@ test('squad error', () => {
     sortHeroes(squad);
   }).toThrow();
 });
+
+test('match toBe test', () => {
+  const squad = [
+    { name: 'мечник', health: 10 },
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 80 },
+  ];
+  const squadSorted = [
+    { name: 'маг', health: 100 },
+    { name: 'лучник', health: 80 },
+    { name: 'мечник', health: 10 },
+  ];
+  const sorted = sortHeroes(squad);
+  expect(sorted).not.toBe(squadSorted);
+});
